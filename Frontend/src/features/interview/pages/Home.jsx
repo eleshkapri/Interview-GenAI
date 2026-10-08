@@ -20,8 +20,46 @@ const Home = () => {
 
     if (loading) {
         return (
-            <main className='loading-screen'>
-                <h1>Loading your interview plan...</h1>
+            <main className='loading-screen' aria-live='polite' aria-busy='true'>
+                <div className='loading-screen__glow loading-screen__glow--gold' />
+                <div className='loading-screen__glow loading-screen__glow--blue' />
+
+                <section className='plan-loader' aria-label='Creating your interview plan'>
+                    {/* Animated AI plan mark */}
+                    <div className='plan-loader__mark' aria-hidden='true'>
+                        <span className='plan-loader__pulse' />
+                        <svg className='plan-loader__ring plan-loader__ring--outer' viewBox='0 0 160 160'>
+                            <circle cx='80' cy='80' r='74' />
+                            <circle className='plan-loader__gold-orbit' cx='80' cy='80' r='74' />
+                        </svg>
+                        <svg className='plan-loader__ring plan-loader__ring--middle' viewBox='0 0 144 144'>
+                            <circle className='plan-loader__dash-track' cx='72' cy='72' r='64' />
+                            <circle className='plan-loader__blue-orbit' cx='72' cy='72' r='64' />
+                        </svg>
+                        <svg className='plan-loader__ring plan-loader__ring--inner' viewBox='0 0 120 120'>
+                            <circle cx='60' cy='60' r='50' />
+                        </svg>
+                        <div className='plan-loader__core'>
+                            <div className='plan-loader__sparkle'>
+                                <svg viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'>
+                                    <path d='m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z' />
+                                </svg>
+                                <span className='plan-loader__status-dot' />
+                            </div>
+                            <span>AI Plan</span>
+                        </div>
+                    </div>
+
+                    <div className='plan-loader__copy'>
+                        <h1>Crafting Your Custom <span>Interview Plan</span></h1>
+                        <p>Building strategic interview prep guide &amp; final recommendations...</p>
+                    </div>
+
+                    <div className='plan-loader__target'>
+                        <span />
+                        <p>Target: <strong>{jobDescription.trim().split('\n')[0] || 'Your selected role'}</strong></p>
+                    </div>
+                </section>
             </main>
         )
     }
