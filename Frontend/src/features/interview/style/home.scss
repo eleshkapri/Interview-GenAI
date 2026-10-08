@@ -7,9 +7,9 @@ $border-color:   #2a3348;
 $text-primary:   #e6edf3;
 $text-muted:     #7d8590;
 $accent:         #e6ae14;
-$accent-alt:     #f2c94c;
-$badge-required: #e6ae14;
-$badge-best:     #e6ae14;
+$accent-alt:     #e9ae0b;
+$badge-required: #ffb74d;
+$badge-best:     #4caf50;
 $info-bg:        #1b2a4a;
 $info-border:    #2d4a7a;
 $font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -370,4 +370,4 @@ $font-stack:     system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Robot
             color: $text-primary;
         }
     }
-} 
+}
